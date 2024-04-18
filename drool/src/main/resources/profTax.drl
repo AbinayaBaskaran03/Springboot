@@ -1,0 +1,19 @@
+package KieRule;
+
+import com.drool.entity.Drool;
+
+rule "Calculate Tax Amount"
+when
+    orderObject : Order(incomeRange != null)
+then
+    orderObject.calculateTaxAmount();
+end;
+
+rule "Calculate Annual Tax Amount"
+when
+    orderObject : Order(monthlyIncome != null, taxAmount != null)
+then
+    orderObject.calculateAnnualTaxAmount();
+end;
+
+
