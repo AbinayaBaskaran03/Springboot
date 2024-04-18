@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Employee Details</title>
+<style>	
+body {
+	width: 100%;
+	margin: 0px auto;
+	padding: 0;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+}
+ .header { 
+	padding: 2px;
+	background-color: rgb(157, 243, 243);
+	font-family: 'Times New Roman';
+	color: black;
+	text-align: center;
+}
+ table, td {
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	padding:0px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin:0px auto;
+}
+ h3 {
+	text-align: center;
+}
+ th {
+	background-color: #a0a0a0;
+}
+ .footer {
+	position: fixed;
+   left: 0;
+   bottom: 0;
+	margin-top:80px;
+	text-align: center;
+	padding: 2px;
+	background-color: rgb(156, 241, 241);
+	color: black;
+}
+  @media print{
+	@page {
+		size: A4;
+		margin: 0.36in;
+	}
+}
+	.parl{
+			width:50%; 
+			float:left;
+		}
+		.parr{
+			width:50%; 
+			float:right;
+		}
+
+  
+</style>
+</head>
+ <body background="D:\java\IMG_20201225_071530">   
+	<div class="header">
+		<header>
+
+			<h1 align="center" >TATA CONSULTANCY</h1>
+
+		</header>
+	</div>
+	<div class="parl">
+	<p>
+            <h3 >CONTENT</h3>
+            Tata Consultancy Services is an IT services, consulting, 
+            and business solutions organization that has been partnering
+             with many of the world's largest businesses in their transformation 
+             journeys for over 50 years. 
+            
+        </p>
+</div>
+<div class="parr">
+	<p>
+            <h3 >ABOUT</h3>
+            Tata Consultancy Services Limited (TCS) is an Indian multinational 
+            information technology (IT) services and consulting company headquartered
+            in Mumbai. It is a part of the Tata Group and operates in 150 locations
+            across 46 countries. In September 2023, it was reported that TCS had over
+            616,000 employees worldwide.
+        </p>
+	</div>
+	
+	<h3>Employee Details</h3>
+
+	<div>
+		<table border="1">
+			<tr>
+				<!--  <th>S.No</th>-->
+				<th>Name</th>
+				<th>Address</th>
+				<th>Dob</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+				<tr th:each="pdf : ${data}">
+					<td th:text="${pdf.name}"></td>
+					<td th:text="${pdf.address}"></td>
+					<td th:text="${pdf.dob}"></td>
+					<td th:text="${pdf.email}"></td>
+					<td th:text="${pdf.phone}"></td>
+				</tr> 
+				
+		</table>
+	</div>
+
+	<div class="footer">
+		<footer >
+			<p>
+				Company Name:Tata Consultancy Service<br/> 1/124, 9th Floor, Mount Poonamalee Road,
+				 DLF IT Park Rd, Block 9,Mugalivakkam, Chennai, Tamil Nadu 600089 <br/>
+				<a href="tel:01800 209 3111">Phone No:1800 209 3111</a>
+				 <a href="mailto:global.marketing@tcs.com">(global.marketing@tcs.com)</a>
+			</p>
+		</footer>
+	</div>
+</body>
+</html>
